@@ -37,7 +37,7 @@ Launch teaser website to collect people interest
 ## Technologies
 ### Production Dependencies:
 | package | version |
----------------------
+|---------|---------|
 | Node.js | +14.15.5 |
 | Express.js | v4.17.1 |
 | cors | v2.8.5 |
