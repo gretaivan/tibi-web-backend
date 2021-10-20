@@ -36,15 +36,15 @@ Launch teaser website to collect people interest
 - [ ] test external api calls
 - [ ] test helper functions
 
-# Technologies
+## Technologies
 
-## Production Dependencies:
-Node.js
-Express.js
-cors
-Heroku - Hosting the API
+### Production Dependencies:
+Node.js  
+Express.js  
+cors  
 
-## Development dependencies: 
-Jest
-Nodemon
-Supertest
+
+### Development dependencies: 
+Jest  
+Nodemon  
+Supertest  
