@@ -1,0 +1,29 @@
+{
+  "name": "tibi-web-backend",
+  "version": "1.0.0",
+  "description": "Launch teaser website to collect people interest on the product",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gretaivan/tibi-web.git"
+  },
+  "keywords": [
+    "website",
+    "javascript",
+    "node.js",
+    "jest",
+    "nodemon",
+    "heroku"
+  ],
+  "author": "Greta Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gretaivan/tibi-web/issues"
+  },
+  "homepage": "https://github.com/gretaivan/tibi-web#readme"
+}
