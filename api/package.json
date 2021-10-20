@@ -1,0 +1,40 @@
+{
+  "name": "tibi-web-backend",
+  "version": "1.0.0",
+  "description": "Launch teaser website to collect people interest on the product",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --setupFiles ./__tests__/integration/config.js --watchAll --detectOpenHandles --runInBand --verbose",
+    "dev": "nodemon app.js --legacy-watch",
+    "start": "node app.js",
+    "seedDev": "node dbConfig/seedDev.js",
+    "unitTests": "jest --testPathPattern=/unit/ --watchAll --verbose",
+    "coverage": "jest --setupFiles ./__tests__/integration/config.js --testPathPattern=/unit/ --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gretaivan/tibi-web.git"
+  },
+  "keywords": [
+    "website",
+    "javascript",
+    "node.js",
+    "jest",
+    "nodemon",
+    "heroku"
+  ],
+  "author": "Greta Ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gretaivan/tibi-web/issues"
+  },
+  "homepage": "https://github.com/gretaivan/tibi-web#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  }
+}
