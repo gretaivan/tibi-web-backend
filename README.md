@@ -39,7 +39,7 @@ Launch teaser website to collect people interest
 ## Technologies
 
 ### Production Dependencies:
-Node.js  
+Node.js +14.15.5 
 Express.js  
 cors  
 
