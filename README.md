@@ -2,7 +2,7 @@
 Launch teaser website to collect people interest
 
 ## Pre-requisites
-- [Node.js +14.15.5](https://nodejs.org/en/).  You can check you version ```node -v```
+- [Node.js v+14.15.5](https://nodejs.org/en/).  You can check you version ```node -v```
 
 
 ### First time use 
@@ -12,16 +12,16 @@ Launch teaser website to collect people interest
 
 ### Usage 
 + ```npm start``` to run in production mode
-+ ```npm dev``` to run in development mode
-+ ```npm test``` to start test
++ ```npm run dev``` to run in development mode
++ ```npm run test``` to start test
 
 
 
 ## Changelog
 - [x] remote repo setup 
 - [x] initiate the node.js project and setup running scripts
-- [ ] install required packages, see [technologies](#technologies)
-- [ ] set up express server 
+- [x] install required packages, see [technologies](#technologies)
+- [x] set up express server, see ```server.js```
 - [ ] general route ('/') added with welcome message
 - [ ] added routes for /search/:query & /search/random/:query
 - [ ] added cors, body-parser, axios packages
@@ -36,12 +36,14 @@ Launch teaser website to collect people interest
 
 ## Technologies
 ### Production Dependencies:
-Node.js +14.15.5 
-Express.js  
-cors  
+| package | version |
+---------------------
+| Node.js | +14.15.5 |
+| Express.js | v4.17.1 |
+| cors | v2.8.5 |
 
 
 ### Development dependencies: 
+nodemon v2.0.14
 Jest  
-Nodemon  
 Supertest  

@@ -25,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/gretaivan/tibi-web/issues"
   },
-  "homepage": "https://github.com/gretaivan/tibi-web#readme"
+  "homepage": "https://github.com/gretaivan/tibi-web#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
 }
