@@ -2,7 +2,7 @@
 Launch teaser website to collect people interest
 
 ## Pre-requisites
-- Node.js 
+- [Node.js +14.15.5](https://nodejs.org/en/).  You can check you version ```node -v```
 
  
 ## BACKEND
@@ -27,8 +27,8 @@ Launch teaser website to collect people interest
 - [ ] general route ('/') added with welcome message
 - [ ] added routes for /search/:query & /search/random/:query
 - [ ] added cors, body-parser, axios packages
-- [ ] added axios functions to get data from external api
-- [ ] added helper functions for formatting and randomizing data
+
+
 
 ## Test TODO 
 - [ ] test server
