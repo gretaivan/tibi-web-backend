@@ -1,11 +1,9 @@
-# tibi-web
+# tibi-web-backend
 Launch teaser website to collect people interest
 
 ## Pre-requisites
 - [Node.js +14.15.5](https://nodejs.org/en/).  You can check you version ```node -v```
 
- 
-## BACKEND
 
 ### First time use 
 1. fork and clone this repo
@@ -37,7 +35,6 @@ Launch teaser website to collect people interest
 - [ ] test helper functions
 
 ## Technologies
-
 ### Production Dependencies:
 Node.js +14.15.5 
 Express.js  
