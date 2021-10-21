@@ -1,1 +1,2 @@
--- seeds in some data for development purposes 
+INSERT INTO Subscribers(email)
+VALUES (test@test.com)
