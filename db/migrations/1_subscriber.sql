@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS Subscribers; 
+
+CREATE TABLE Subscribers(
+    email VARCHAR(320) PRIMARY KEY,
+    created_on DATE DEFAULT CURRENT_DATE
+); 

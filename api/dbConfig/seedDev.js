@@ -1,3 +1,5 @@
+// instucts the database upon connection to read the dev data seed file. Just for dev purposes
+
 const db = require('./init');
 const fs = require('fs');
 

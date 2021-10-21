@@ -1,3 +1,5 @@
+// db init file, i.e. to establish the connection and then to allow our model to query DB
+
 const { Pool } = require("pg");
 
 let config;
