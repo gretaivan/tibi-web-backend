@@ -28,19 +28,26 @@ Launch teaser website to collect people interest
 
 
 ## Changelog
+### Tasks where sequence matters 
 - [x] remote repo setup 
 - [x] initiate the node.js project and setup running scripts
 - [x] install required packages, see [technologies](#technologies)
 - [x] set up express server, see ```server.js```
 - [x] general route ('/') added with welcome message
-- [ ] docker setup files for DB + update manual
+- [x] docker setup files for DB + update manual
     - [x] yamls setup to enable docker to run on prefered images and setup bash scripts
     - [x] created db/migrations folder for DB schemas
-    - [ ] create user schema
+    - [x] create subscriber schema
     - [x] in api create db config files 
-    - [ ] dev_seeds.sql file to script data seed into the database for development purposes 
+    - [x] dev_seeds.sql file to script data seed into the database for development purposes 
     - [x] seedDev.js - created the seed parser from js to sql
     - [x] init.js - the database initiator functions
+
+### Standard changelog
+#### Models
+- [ ] create subscriber model: constructor, get all records, find record by pk, create
+- [ ] create route to read and write subscribers
+   
 
 
 
