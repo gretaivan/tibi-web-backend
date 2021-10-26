@@ -45,8 +45,8 @@ Launch teaser website to collect people interest
 
 ### Standard changelog
 #### Models
-- [ ] create subscriber model: constructor, get all records, find record by pk, create
-- [ ] create route to read and write subscribers
+- [ ] created subscriber model: constructor, get all records, find record by pk, create
+- [ ] created route and controller for read and write subscribers
    
 
 
@@ -54,9 +54,9 @@ Launch teaser website to collect people interest
 
 ## Test TODO 
 - [ ] test server
-- [ ] test get requests
+- [ ] test Subscriber model
 - [ ] test external api calls
-- [ ] test helper functions
+
 
 ## Technologies
 ### Production Dependencies:
@@ -72,8 +72,9 @@ Launch teaser website to collect people interest
 | package | version |
 |---------|---------|
 | nodemon | 2.0.14 |
-| Jest | 4.17.1 |
-| supertest | 2.8.5 |
+| Jest | 27.3.1 |
+| supertest | 6.1.6 |
+| fs | 0.0.1 |
  
   
   
