@@ -11,6 +11,18 @@
     "unitTests": "jest --testPathPattern=/unit/ --watchAll --verbose",
     "coverage": "jest --setupFiles ./__tests__/integration/config.js --testPathPattern=/unit/ --coverage"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/integration/config.js",
+      "/dbConfig/init.js"
+    ],
+    "watchPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/integration/config.js"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gretaivan/tibi-web.git"

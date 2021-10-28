@@ -14,7 +14,7 @@ class Subscriber {
                 const subs = result.rows.map(sub => new Subscriber(sub));
                 res(subs); 
             } catch(err) {
-                rej('SERVER ERROR: could not get the Subscriber record'); 
+                rej('ERROR: could not get the Subscriber record'); 
             }
         });
     }
@@ -36,3 +36,5 @@ class Subscriber {
     }
     //TODO: find by pk 
 }
+
+module.exports = Subscriber; 

@@ -21,3 +21,5 @@ const resetTestDB = () =>  {
 global.request = request;
 global.app = apiServer;
 global.resetTestDB = resetTestDB;
+// increment the user count if you added additional data in reset.sql
+global.defaultDBLength = 1;

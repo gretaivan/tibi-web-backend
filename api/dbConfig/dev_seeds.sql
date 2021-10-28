@@ -1,2 +1,2 @@
-INSERT INTO Subscribers(email)
-VALUES (test@test.com)
+INSERT INTO Subs(email)
+VALUES ('test@test.com');
