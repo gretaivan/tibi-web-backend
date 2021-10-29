@@ -22,19 +22,24 @@ class Subscriber {
     //TODO: create
     static create(data){
         return new Promise(async (res, rej) => {
-            //check if an email already exist, if does throw an error
-            let exists = await db.query('SELECT * Subscribers WHERE email=($1);',[data.email]);
-            
-            if(exists.rows.length > 0) {
-                throw Error('You are already registered your interest with us');
+            try{
+                //check if an email already exist, if does throw an error
+                let exists = await db.query('SELECT * Subscribers WHERE email=($1);',[data.email]);
+                
+                if(exists.rows.length > 0) {
+                    throw Error('You are already registered your interest with us');
+                }
+                
+                let result = await db.query('INSERT INTO Subscribers(email) VALUES($1) RETURNING *;', [data.email]);
+                let subs = new Subscriber(result.rows[0]);
+                res(subs); 
+            } catch(err){
+                rej('Something went wrong, please check you email address');
             }
-            
-            let result = await db.query('INSERT INTO Subscribers(email) VALUES($1) RETURNING *;', [data.email]);
-            let subs = new Subscriber(result.rows[0]);
-            res(subs); 
         });
     }
     //TODO: find by pk 
+    //TODO: find by IP
 }
 
 module.exports = Subscriber; 
