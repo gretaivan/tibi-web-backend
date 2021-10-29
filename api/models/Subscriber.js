@@ -13,7 +13,7 @@ class Subscriber {
                 let result = await db.query('SELECT * FROM Subscribers;')
                 const subs = result.rows.map(sub => new Subscriber(sub));
                 res(subs); 
-            } catch(err) {
+            }catch(err) {
                 rej('ERROR: could not get the Subscriber record'); 
             }
         });

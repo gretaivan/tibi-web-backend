@@ -1,4 +1,4 @@
-const Subs = require('../../../models/Subscriber')
+const Subscriber = require('../../../models/Subscriber')
 const pg = require('pg')
 jest.mock('pg')
 const db = require('../../../dbConfig/init')
@@ -16,16 +16,15 @@ describe('SUBSCRIBER MODEL', () => {
 
     describe('get all', () => {
         it('resolves with the array of subscribers', async () => {
-            const all = await Subs.all; 
-            expect(all).toHaveLength(defaultDBlength);
+            const all = await Subscriber.all; 
+            expect(all).toHaveLength(defaultDBLength);
         })
         it ('rejects with an error on unsuccessful db query', async () => {
-            jest.spyOn(db, 'query').mockResolvedValueOnce(undefined)
-            await Subs.all.catch(e => {
-                expect(e).toMatch('ERROR')
-            })
-            spyOn.mockRestore();
-        
+            try {
+              await Subscriber.all;
+            } catch (e) {
+              expect(e).toMatch('error');
+            }
         })
     })
 })
