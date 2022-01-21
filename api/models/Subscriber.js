@@ -10,8 +10,10 @@ class Subscriber {
     static all(data){
         return new Promise(async(res, rej) => {
             try{
-                let result = await db.query('SELECT * FROM Subscribers;')
+                console.log("all ")
+                let result = await db.query('SELECT * FROM Subs;')
                 const subs = result.rows.map(sub => new Subscriber(sub));
+                console.log(subs)
                 res(subs); 
             }catch(err) {
                 rej('ERROR: could not get the Subscriber record'); 
@@ -24,13 +26,13 @@ class Subscriber {
         return new Promise(async (res, rej) => {
             try{
                 //check if an email already exist, if does throw an error
-                let exists = await db.query('SELECT * Subscribers WHERE email=($1);',[data.email]);
+                let exists = await db.query('SELECT * Subs WHERE email=($1);',[data.email]);
                 
                 if(exists.rows.length > 0) {
                     throw Error('You are already registered your interest with us');
                 }
                 
-                let result = await db.query('INSERT INTO Subscribers(email) VALUES($1) RETURNING *;', [data.email]);
+                let result = await db.query('INSERT INTO Subs(email) VALUES($1) RETURNING *;', [data.email]);
                 let subs = new Subscriber(result.rows[0]);
                 res(subs); 
             } catch(err){

@@ -2,8 +2,6 @@ const express = require('express');
 const Subscriber = require('../models/Subscriber');
 const router = express.Router();
 
-const Subs = require('../models/Subscriber');
-
 // const bcrypt = require('bcrypt'); 
 
 async function create(req, res) {
@@ -22,10 +20,11 @@ async function create(req, res) {
 
 ///do not forget to remove this f-tion for productions
 
-async function all(req, res){
+ async function all (req, res) {
     try{
         console.log("Fetching email list");
-        const subs = await Subs.all; 
+        const subs = await Subscriber.all; 
+        console.log(subs)
         res.status(200).json({email: subs.email, created_on: subs.created_on})
     } catch(err){
         res.status(500).json({err});

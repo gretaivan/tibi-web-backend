@@ -25,6 +25,10 @@ Launch teaser website to collect people interest
 + starts api & db services testing ```bash _scripts/startTest.sh```
 + stop all running services with removal of data```bash _scripts/teardown.sh```
 
+#### Useful docker commands
++ ```docker ps -a``` - docker container info
++ ```docker exec -it <PSQL-Container-ID> bash``` || ```docker exec -it 7a60559d9480 bash``` - connect to container
++ ```psql -h localhost -p 5432 -U postgres -W```
 
 
 ## Changelog
