@@ -1,22 +1,30 @@
-const db = require('../dbConfig/init');
+const { init } = require ("../dbConfig/init");
+const { ObjectId } = require("mongodb");
 
 class Subscriber {
     constructor(data){
+        this.id = data.id;
+        this.name = data.name; 
         this.email = data.email;
+        this.isTester = data.isTester;
         this.created_on = data.created_on; 
     }
 
-    //TODO: get all
-    static all(data){
-        return new Promise(async(res, rej) => {
+    static get all(){
+        return new Promise(async (resolve, reject) => {
             try{
-                console.log("all ")
-                let result = await db.query('SELECT * FROM Subs;')
-                const subs = result.rows.map(sub => new Subscriber(sub));
+                const db = await init();
+                let results = await db.collection("subscribers")
+                    .find()
+                    .toArray();
+                const subs = results.map(
+                    s => new Subscriber({ ...s, id: s._id })
+                );
+                subs.sort((x, y) => y.created_on - x.created_on);
                 console.log(subs)
-                res(subs); 
+                resolve(subs); 
             }catch(err) {
-                rej('ERROR: could not get the Subscriber record'); 
+                reject('ERROR: could not get the Subscriber record'); 
             }
         });
     }
@@ -26,13 +34,13 @@ class Subscriber {
         return new Promise(async (res, rej) => {
             try{
                 //check if an email already exist, if does throw an error
-                let exists = await db.query('SELECT * Subs WHERE email=($1);',[data.email]);
+                let exists = await db.query('SELECT * Subscribers WHERE email=($1);',[data.email]);
                 
                 if(exists.rows.length > 0) {
                     throw Error('You are already registered your interest with us');
                 }
                 
-                let result = await db.query('INSERT INTO Subs(email) VALUES($1) RETURNING *;', [data.email]);
+                let result = await db.query('INSERT INTO Subscribers(name, email, tester) VALUES($1) RETURNING *;', [...data]);
                 let subs = new Subscriber(result.rows[0]);
                 res(subs); 
             } catch(err){

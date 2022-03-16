@@ -1,5 +1,10 @@
-DROP TABLE IF EXISTS Subs; 
+DROP TABLE IF EXISTS Subscribers; 
 
-CREATE TABLE Subs(
-    email VARCHAR(320) PRIMARY KEY
+CREATE TABLE Subscribers(
+    id serial PRIMARY KEY,
+    name VARCHAR(30),
+    email VARCHAR(200) NOT NULL UNIQUE,
+    is_tester BIT,
+    joined TIMESTAMP
 ); 
+SET timezone = 'Europe/London';

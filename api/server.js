@@ -17,6 +17,6 @@ server.get('/', (req, res) => {
 })
 
 const subRoutes = require('./routes/subscribers');
-server.use('/reg-interest', subRoutes);
+server.use('/community', subRoutes);
 
 module.exports = server;

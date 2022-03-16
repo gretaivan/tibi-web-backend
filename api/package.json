@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --setupFiles ./__tests__/integration/config.js --watchAll --detectOpenHandles --runInBand --verbose",
-    "dev": "nodemon app.js --legacy-watch",
-    "start": "node app.js",
+    "dev": "nodemon -r dotenv/config app.js --legacy-watch",
+    "start": "node -r dotenv/config app.js",
     "seedDev": "node dbConfig/seedDev.js",
     "unitTests": "jest --testPathPattern=/unit/ --watchAll --verbose",
     "coverage": "jest --setupFiles ./__tests__/integration/config.js --testPathPattern=/unit/ --coverage"
@@ -49,7 +49,9 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.1",
+    "mongodb": "^4.4.1",
     "pg": "^8.7.1"
   }
 }
